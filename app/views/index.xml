@@ -1,0 +1,9 @@
+<Alloy>
+	<Window class="container">
+		<View layout="vertical">
+			<Button id="doShop" class="button">Faire ses courses</Button>
+			<Button id="makeShop" class="button">Préparer ses courses</Button>
+			<Button id="whereShop" class="button">Magasins</Button>
+		</View>
+	</Window>
+</Alloy>

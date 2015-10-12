@@ -1,0 +1,27 @@
+<Alloy>
+	<Window class="container">
+		<ListView id="elementsList" defaultItemTemplate="template">
+			<Templates>
+                <!-- Define your item templates within the Templates tags or use the
+                     Require tag to include a view that only contains an ItemTemplate -->
+
+                <ItemTemplate name="template">
+                	<Switch bindId="checked" id="switch_product" value="false" onChange="doSwitchMe"/>
+                    <Label bindId="product" id="name_product" />
+                    <Label bindId="deleteProduct" id="delete_product" />
+                </ItemTemplate>
+
+            </Templates>
+
+			<ListSection class="listProducts" name="elements">
+				<ListItem class="listProduct" checkProduct:value="false" checked:myID='1' product:text="Manzana" deleteProduct:text="delete"/>
+				<ListItem class="listProduct" checkProduct:value="false" checked:myID='2' product:text="Poire" deleteProduct:text="delete"/>
+				<ListItem class="listProduct" checkProduct:value="false" checked:myID='3' product:text="Bière" deleteProduct:text="delete"/>
+				<!-- Abbreviated... -->
+			</ListSection>
+		</ListView>
+
+		<Button id="validateProducts" class="button">Valider</Button>
+		<Button id="createProduct" class="button">Créer un nouveau produit</Button>
+	</Window>
+</Alloy>

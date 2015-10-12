@@ -1,0 +1,4 @@
+
+
+
+$.createProduct.open();

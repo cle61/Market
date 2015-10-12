@@ -1,0 +1,19 @@
+".container": {
+	backgroundColor:"white"
+}
+
+"#switch_product" : {
+    width: '50dp', height: '50dp', left: 0
+},
+"#name_product" : {
+    color: 'black',
+    font: { fontFamily:'Arial', fontSize: '20dp', fontWeight:'bold' },
+    left: '60dp',
+    height: '50dp'
+},
+"#delete_product" : {
+    color: 'gray',
+    font: { fontFamily:'Arial', fontSize: '14dp' },
+	right: '60dp', 
+	height: '50dp'
+}
