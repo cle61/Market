@@ -1,27 +1,29 @@
 <Alloy>
 	<Window class="container">
-		<ListView id="elementsList" defaultItemTemplate="template">
-			<Templates>
-                <!-- Define your item templates within the Templates tags or use the
-                     Require tag to include a view that only contains an ItemTemplate -->
+		<ScrollView layout="vertical">
+			<ListView id="elementsList" defaultItemTemplate="template">
+				<Templates>
+	                <!-- Define your item templates within the Templates tags or use the
+	                     Require tag to include a view that only contains an ItemTemplate -->
+	                <ItemTemplate name="template">
+	                	<Switch bindId="checked" id="switch_product" value="false" onChange="doSwitchMe"/>
+	                    <Label bindId="product" id="name_product" />
+	                    <Label bindId="deleteProduct" id="delete_product" />
+	                </ItemTemplate>
 
-                <ItemTemplate name="template">
-                	<Switch bindId="checked" id="switch_product" value="false" onChange="doSwitchMe"/>
-                    <Label bindId="product" id="name_product" />
-                    <Label bindId="deleteProduct" id="delete_product" />
-                </ItemTemplate>
+	            </Templates>
 
-            </Templates>
-
-			<ListSection class="listProducts" name="elements">
-				<ListItem class="listProduct" checkProduct:value="false" checked:myID='1' product:text="Manzana" deleteProduct:text="delete"/>
-				<ListItem class="listProduct" checkProduct:value="false" checked:myID='2' product:text="Poire" deleteProduct:text="delete"/>
-				<ListItem class="listProduct" checkProduct:value="false" checked:myID='3' product:text="Bière" deleteProduct:text="delete"/>
-				<!-- Abbreviated... -->
-			</ListSection>
-		</ListView>
-
-		<Button id="validateProducts" class="button">Valider</Button>
-		<Button id="createProduct" class="button">Créer un nouveau produit</Button>
+				<ListSection class="listProducts" name="elements">
+					<ListItem class="listProduct" checked:value="false" checked:myID='1' product:text="Manzana" deleteProduct:text="delete"/>
+					<ListItem class="listProduct" checked:value="false" checked:myID='2' product:text="Poire" deleteProduct:text="delete"/>
+					<ListItem class="listProduct" checked:value="false" checked:myID='3' product:text="Bière" deleteProduct:text="delete"/>
+					<!-- Abbreviated... -->
+				</ListSection>
+			</ListView>
+		</ScrollView>
+		<View layout="vertical" id="viewButton">
+			<Button id="validateProducts" class="button">Valider</Button>
+			<Button id="createProduct" class="button">Créer un nouveau produit</Button>
+		</View>
 	</Window>
 </Alloy>

@@ -1,16 +1,62 @@
+// LISTES DES PRODUITS
 // On set la liste des produits
-/*
-var items = [
-	{properties : {title: "Hydrogen"} },
-	{properties : {title: "Helium"} },
-	{properties : {title: "Lithium"} },
-	{properties : {title: "Beryllium"} },
-	{properties : {title: "Boron"}	},
-	{properties : {title: "Carbon"} },
-	{properties : {title: "Nitrogen"}}
+var listProducts = [
+	{
+		product: {
+			text : "Carotte"
+		},
+		checked: {
+			value : false
+		}
+	},
+	{
+		product: {
+			text : "Poulet"
+		},
+		checked: {
+			value : false
+		}
+	},
+	{
+		product: {
+			text : "Oeuf"
+		},
+		checked: {
+			value : false
+		}
+	},
+	{
+		product: {
+			text : "Bière"
+		},
+		checked: {
+			value : false
+		}
+	},
+	{
+		product: {
+			text : "Brocoli"
+		},
+		checked: {
+			value : false
+		}
+	},
+	{
+		product: {
+			text : "saucisson"
+		},
+		checked: {
+			value : false
+		}
+	}
 ];
-$.elementsList.sections[0].setItems(items);
-*/
+
+
+//var allProducts = Ti.App.Properties.setObject('allProducts', listProducts);
+var allProducts = Ti.App.Properties.getObject('allProducts');
+console.log(allProducts);
+$.elementsList.sections[0].setItems(allProducts);
+
 
 function doSwitchMe(e) {
     

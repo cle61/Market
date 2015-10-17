@@ -1,3 +1,4 @@
+
 $.doShop.addEventListener('click', function(e) {
 	var doShopView = Alloy.createController('doShop').getView();
 	doShopView.open();

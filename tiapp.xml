@@ -55,8 +55,6 @@
   </modules>
   <deployment-targets>
     <target device="android">true</target>
-    <target device="mobileweb">true</target>
-    <target device="windows">true</target>
   </deployment-targets>
   <sdk-version>5.0.0.GA</sdk-version>
   <plugins>
