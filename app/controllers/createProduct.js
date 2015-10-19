@@ -5,11 +5,12 @@ $.addProduct.addEventListener('click', function(e) {
 	if ($.textField.value != null) {
 		var allProducts = Ti.App.Properties.getObject('allProducts');
 		allProducts.push({
+			checked: {
+				myID : allProducts.length,
+				value : true
+			},
 			product: {
 				text : $.textField.value
-			},
-			checked: {
-				value : true
 			}
 		});
 		console.log(allProducts);

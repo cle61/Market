@@ -6,18 +6,15 @@
 	                <!-- Define your item templates within the Templates tags or use the
 	                     Require tag to include a view that only contains an ItemTemplate -->
 	                <ItemTemplate name="template">
-	                	<Switch bindId="checked" id="switch_product" value="false" onChange="doSwitchMe"/>
-	                    <Label bindId="product" id="name_product" />
-	                    <Label bindId="deleteProduct" id="delete_product" />
+	                	<Switch bindId="checked" id="switch_product" value="false" class="listProduct" onChange="doSwitchMe"/>
+	                    <Label bindId="product" id="name_product" class="listProduct" />
+	                    <Label bindId="deleteProduct" id="delete_product" class="listProduct" />
 	                </ItemTemplate>
 
 	            </Templates>
 
 				<ListSection class="listProducts" name="elements">
 					<ListItem class="listProduct" checked:value="false" checked:myID='1' product:text="Manzana" deleteProduct:text="delete"/>
-					<ListItem class="listProduct" checked:value="false" checked:myID='2' product:text="Poire" deleteProduct:text="delete"/>
-					<ListItem class="listProduct" checked:value="false" checked:myID='3' product:text="Bière" deleteProduct:text="delete"/>
-					<!-- Abbreviated... -->
 				</ListSection>
 			</ListView>
 		</ScrollView>
