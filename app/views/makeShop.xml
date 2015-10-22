@@ -13,7 +13,7 @@
 
 	            </Templates>
 
-				<ListSection class="listProducts" name="elements">
+				<ListSection id="myElement" class="listProducts" name="elements">
 					<ListItem class="listProduct" checked:value="false" checked:myID='1' product:text="Manzana" deleteProduct:text="delete"/>
 				</ListSection>
 			</ListView>
