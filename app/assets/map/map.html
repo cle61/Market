@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Google Maps JavaScript API v3</title>
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map" style="height:50px; width: 50px;"></div>
+    <script>
+    // This is how you trigger the event listener created above
+    // from within javascript inside index.html
+    Ti.App.fireEvent('location', { data : escape('location') } );
+    console(Ti.App.fireEvent('location', { data : escape('location') } ));
+    </script>
+    <script type="text/javascript">
+
+        function initMap() {
+            var myLatLng = {lat: -25.363, lng: 131.044};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 15
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            var service = new google.maps.places.PlacesService(map);
+
+            service.getDetails({
+                placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+            }, function(place, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: myLatLng,
+                        title: 'ma position'
+                    });
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setContent(place.name);
+                        infowindow.open(map, this);
+                    });
+                }
+            });
+        }
+
+        // Resize div map
+        document.getElementById("map").style.width = window.innerWidth+'px';
+        document.getElementById("map").style.height = window.innerHeight+'px';
+
+        window.onresize = function(event) {
+            document.getElementById("map").style.width = window.innerWidth+'px';
+            document.getElementById("map").style.height = window.innerHeight+'px';
+        };
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCNs3BoYdzZSJm_f5miy2iNFeTLpcjhrk&signed_in=true&callback=initMap&libraries=places">
+    </script>
+</body>
+</html>

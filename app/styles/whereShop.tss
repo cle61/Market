@@ -1,0 +1,4 @@
+"#map": {
+	url: '/map/map.html',
+	top: 40
+}

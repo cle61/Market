@@ -1,5 +1,25 @@
 <Alloy>
 	<Window class="container">
-		
+		<ScrollView layout="vertical">
+			<ListView id="elementsList" defaultItemTemplate="template">
+				<Templates>
+	                <!-- Define your item templates within the Templates tags or use the
+	                     Require tag to include a view that only contains an ItemTemplate -->
+	                <ItemTemplate name="template">
+	                	<Switch bindId="cart" id="switch_product" value="false" class="listProduct"/>
+	                    <Label bindId="product" id="name_product" class="listProduct" />
+	                    <Label bindId="deleteProduct" id="delete_product" class="listProduct" />
+	                </ItemTemplate>
+
+	            </Templates>
+
+				<ListSection id="myElement" class="listProducts" name="elements">
+					<ListItem class="listProduct" cart:value="false" cart:myID='1' product:text="Manzana" deleteProduct:text="delete"/>
+				</ListSection>
+			</ListView>
+		</ScrollView>
+		<View layout="vertical" id="viewButton">
+			<Button id="backMain" class="button">Retour</Button>
+		</View>
 	</Window>
 </Alloy>

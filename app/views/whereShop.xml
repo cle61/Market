@@ -1,5 +1,5 @@
 <Alloy>
 	<Window class="container">
-		
+		<WebView id="map" />
 	</Window>
 </Alloy>
